@@ -1,0 +1,86 @@
+body { /*เข้าถึง body*/
+    margin: 0; 
+    padding: 0;
+    background: #CCC;
+}
+
+.nav ul { /*เข้าถึง ul อยู่ใน tag ที่มี .nav */
+    list-style: none; 
+    background-color: #444;
+    text-align: left; /*จัดให้ชิดซ้าย*/
+    padding: 0;
+    margin: 0;
+}
+
+
+.nav li { /*เข้าถึง li อยู่ใน tag ที่มี .nav */
+    font-size: 1.2em;
+    line-height: 40px;
+    text-align: left; /*จัดให้ชิดซ้าย*/
+}
+
+.nav a { /*เข้าถึง  a อยู่ใน tag ที่มี .nav */
+    text-decoration: none; /*ให้ไม่มีเส้นใต้*/
+    color: #fff;
+    display: block; /* แสดงผลเป็นลักษณะ ขึ้นบรรทัดใหม่ */
+    padding-left: 15px; /* ว้นระยะขอบซ้าย(ด้านใน) 15px */
+    border-bottom: 1px solid #888; /*ใช้กำหนดคุณสมบัติให้กับกรอบด้านล่าง 1px กับเป็นสี #888 */
+    transition: .3s; /* ความเร็วในการเปลี่ยน */
+}
+
+.nav a:hover { /*เข้าถึง a อยู่ใน tag ที่มี .nav แล้วใช้ hover เพื่อตอนชี้แล้วเปลี่ยนสี*/
+    background-color: #005F5F;
+}
+
+.nav a.active { /*เข้าถึง a อยู่ใน tag ที่มี .nav และมี .active */
+    background-color: #aaa;
+    color: #444;
+    cursor: default; /* มีแล้วไม่เปลี่ยนรูปเมาส์ */
+}
+
+.nav li li { /*เข้าถึง li ที่อยู่ใน li และอยู่ใน tag ที่มี .nav */
+    font-size: 15px;
+}
+
+/* Style menu for larger screens */
+/* สำหรับหน้าจอที่มีขนาดใหญ่กว่า */
+
+@media screen and (min-width: 650px) {  /*คำสั่ง @mediascreen and เพื่อทำให้มี Responsive min-width650px =เมื่อความกว้างน้อยกว่า 650px*/
+    .nav li { /*เข้าถึง li อยู่ใน tag ที่มี  .nav */
+        width: 130px;
+        border-bottom: none; /* ปิด border-bottom*/
+        height: 50px;
+        line-height: 50px; /*ระยะห่างระหว่างแนวตั้ง */
+        font-size: 1.4em;  
+        display: inline-block; /*ตั้งให้เป็น lnline-block*/
+        margin-right: -4px; /*เว้นระยะขอบขวา -4px */
+    }
+
+.nav a { /*เข้าถึง  a ที่อยู่ใน tag ที่มี .nav*/
+    border-bottom: none; /* ปิดเส้นขอบ */
+}
+
+.nav > ul > li { /* เข้าถึง Li ที่เป็นลูกของ ul และที่มี .nav อยู่ใน tag เท่านั้น */
+    text-align: center; /*จัดให้อยู่ตรงกลาง*/
+}
+
+.nav > ul > li > a { /* เข้าถึง a ที่เป็นลูกของ li และ li ที่เป็นลูกของ ul ที่มี .nav อยู่ใน tag เท่านั้น */
+    padding-left: 0; /* เว้นระยะขอบซ้าย(ด้านใน) เป็น 0 */
+}
+
+/* sub menu */
+.nav li ul { /* เข้าถึง ul ที่อยู่ใน li ที่มี .nav อยู่ใน tag */
+    position: absolute; /* ในลอยอิสระโดน โดนอ้างอิงจากรอบของมัน*/
+    display: none;
+    width: inherit; /* ให้มันเข้าไปอยู่ใน Dropdown*/
+}
+
+.nav li:hover ul { /*เข้าถึง ul ที่อยู่ใน li และมี tag .nav แล้วใช้คำสั่ง hove เมื่อชี้แล้ว...*/
+    display: block; /* เปลี่ยนจาก none แบบคำสั่งด้านบนให้เป็ย Block*/
+
+}
+
+.nav li ul li { /* เข้าถึง li ที่อยู่ใน ul แล้วอยู่ใน li ที่มี .nav อยู่ใน tag */
+    display: block;
+}
+}
